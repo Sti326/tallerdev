@@ -42,9 +42,9 @@ class clienteController extends Controller
         $cliente->nombre=$request->get('nombre');
         $cliente->apellido=$request->get('apellido');
         $cliente->edad=$request->get('edad');
-        $empleado->email=$request->get('email');
-        $empleado->telefono=$request->get('telefono');
-        $empleado->save();
+        $cliente->email=$request->get('email');
+        $cliente->telefono=$request->get('telefono');
+        $cliente->save();
         return Redirect::to('cliente');
     }
 
@@ -98,9 +98,9 @@ class clienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {    
         $cliente=cliente::findOrFail($id);
-        $cliente>delete();
+        $cliente->delete();
         return Redirect::to('cliente');
     }
 }
